@@ -11,13 +11,13 @@ import ru.httpemulator.data.ResultPostRS;
 public class RestControler {
     Logger log = LoggerFactory.getLogger(RestControler.class);
 
-    @RequestMapping(path = "/getresult", method = RequestMethod.GET)
+    @RequestMapping(path = "/result", method = RequestMethod.GET)
     public String resultGet() {
-
+        log.info("endpoint getresult");
         return "{\"status\": \"OK\"}";
     }
 
-    @RequestMapping(path = "/postresult", method = RequestMethod.POST)
+    @RequestMapping(path = "/result", method = RequestMethod.POST)
     @ResponseBody
     public ResultPostRS resultPost(@RequestBody ResultPostRQ rq) {
         return new ResultPostRS(rq.login);
